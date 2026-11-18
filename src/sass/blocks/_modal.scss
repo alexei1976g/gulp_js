@@ -1,0 +1,64 @@
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+
+  &--show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 500px;
+    min-height: 150px;
+    padding: 40px;
+    border-radius: 12px;
+    background-color: #fff;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  }
+
+  &-close {
+    position: absolute;
+    top: 16px;
+    right: 20px;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
+    font-size: 28px;
+    line-height: 1;
+    color: #555;
+    cursor: pointer;
+
+    &:hover {
+      color: #000;
+    }
+  }
+
+  &-message {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.5;
+    color: #333;
+    word-break: break-word;
+  }
+
+  &--error &-message {
+    color: #c0392b;
+  }
+}
